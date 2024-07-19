@@ -7,6 +7,7 @@ import Login from './components/Login';
 
 function App() {
   const [role, setRole] = useState(null);
+  const [count, setCount] = useState(0);
 
   return (
     <Router>
@@ -14,7 +15,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login setRole={setRole} />} />
             <Route path="/admin/*" element={role === 'admin' ? <Admin /> : <Navigate to="/login" />} />
-            <Route path="/customer/*" element={role === 'customer' ? <Customer /> : <Navigate to="/login" />} />
+            <Route path="/customer/*" element={role === 'user' ? <Customer /> : <Navigate to="/login" />} />
             <Route path="/" element={<Navigate to="/login" />} />
           </Routes>
       </main>
