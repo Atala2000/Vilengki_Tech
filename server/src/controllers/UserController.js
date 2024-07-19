@@ -77,14 +77,14 @@ export const Login = async (req, res) => {
     if(checkAdmin){
         req.session.loggedin = true;
         req.session.adminemail = email
-        res.status(200).send({
-            adminemail : email
+        res.status(200).json({
+            role : 'admin'
         });
     }
     req.session.loggedin = true;
     req.session.useremail = email;
-    res.status(200).send({
-        useremail : email
+    res.status(200).json({
+        role : 'user'
     })
 }
 
