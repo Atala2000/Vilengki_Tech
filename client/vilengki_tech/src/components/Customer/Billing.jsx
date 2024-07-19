@@ -18,7 +18,7 @@ const Billing = () => {
     e.preventDefault();
     const amount = formData.amount;
 
-    fetch("http://localhost:5000/api/createOrder", {
+    fetch("http://localhost:5600/api/createOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

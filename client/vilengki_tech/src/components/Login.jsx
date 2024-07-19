@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import '../assets/css/Login.css';
 
 const Login = ({ setRole }) => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [fullname, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [county, setCounty] = useState('');
   const [error, setError] = useState('');
@@ -14,10 +15,10 @@ const Login = ({ setRole }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:5600/api/login', {
+      const response = await fetch('http://localhost:5600/api/Login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       });
       if (!response.ok) {
         throw new Error('Failed to login');
@@ -33,10 +34,10 @@ const Login = ({ setRole }) => {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch('http://localhost:5600/api/signup', {
+      const response = await fetch('http://localhost:5600/api/SignUp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password, name, phone, county }),
+        body: JSON.stringify({ email, password, fullname, phone, county }),
       });
       if (!response.ok) {
         throw new Error('Failed to signup');
@@ -44,6 +45,7 @@ const Login = ({ setRole }) => {
       const result = await response.json();
       const role = result.role;
       setRole(role);
+      console.log(role);
       navigate(role === 'admin' ? '/admin' : '/customer');
     } catch (error) {
       setError(error.message);
@@ -59,7 +61,7 @@ const Login = ({ setRole }) => {
           <input
             type="text"
             placeholder="Name"
-            value={name}
+            value={fullname}
             onChange={(e) => setName(e.target.value)}
           />
           <input
@@ -78,9 +80,9 @@ const Login = ({ setRole }) => {
       )}
       <input
         type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
       />
       <input
         type="password"
@@ -96,6 +98,10 @@ const Login = ({ setRole }) => {
       </p>
     </div>
   );
+};
+
+Login.propTypes = {
+  setRole: PropTypes.func.isRequired,
 };
 
 export default Login;
