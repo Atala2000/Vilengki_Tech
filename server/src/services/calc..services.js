@@ -1,5 +1,8 @@
-function calcPrice(waterUsage, householdPrice, prepBalance){
-    let moneyUsed = waterUsage*householdPrice;
-    let amountRemaining = prepBalance-moneyUsed;
-    return {moneyUsed, amountRemaining}
+function calcPrice(waterUsage, price, prepaidBalance){
+    let defaultLitres = prepaidBalance/price;
+    let moneyUsed = waterUsage*price;
+    let amountRemaining = prepaidBalance-moneyUsed;
+    return {moneyUsed, amountRemaining, prepaidBalance, defaultLitres}
 }
+
+export {calcPrice}
