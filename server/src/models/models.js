@@ -10,8 +10,8 @@ const User = sequelize.define("User", {
     userpassword: { type: DataTypes.STRING, allowNull: false, unique: true },
     phone: { type: DataTypes.BIGINT, allowNull: false, unique: true },
     county: { type: DataTypes.STRING, allowNull: false },
-    prepaidBalance: { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 },
-    waterUsage: { type: DataTypes.FLOAT, allowNull: false, defaultValue: 0 }
+    prepaidBalance: { type: DataTypes.FLOAT, allowNull: false, defaultValue: 1000 },
+    waterUsage: { type: DataTypes.FLOAT, allowNull: false, defaultValue: 5 }
 });
 
 const Admin = sequelize.define("Admin", {
