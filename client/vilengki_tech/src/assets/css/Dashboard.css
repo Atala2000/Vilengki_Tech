@@ -1,0 +1,134 @@
+.amount__details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 20px;
+  height: auto;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+#litres__paid {
+  background-color: #80cccc;
+  color: white;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; /* Aligns text in the center */
+}
+
+#liters__used {
+  background-color: #ffcc66;
+  color: white;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; /* Aligns text in the center */
+}
+
+#prepaid__balance {
+  background-color: #80cc99;
+  color: white;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; /* Aligns text in the center */
+}
+
+.amount__ {
+  color: white;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center; /* Aligns text in the center */
+}
+
+
+.warning {
+    background-color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.5s;
+}
+
+.normal {
+    background-color: #66ff8c;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.5s;
+    
+}
+
+.meter {
+  width: 100%;
+  height: 20px;
+}
+
+.amount__details {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.water__level {
+  text-align: center;
+}
+
+.warning {
+  color: red;
+}
+
+.normal {
+  color: green;
+}
+Full CSS File (Dashboard.css)
+css
+Copy code
+.amount__details {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.amount__ {
+  text-align: center;
+  padding: 10px;
+}
+
+.warning {
+  color: red;
+}
+
+.normal {
+  color: green;
+}
+
+.water__level {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.water__level meter {
+  width: 100%;
+  height: 20px;
+}
