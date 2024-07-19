@@ -1,18 +1,9 @@
-import { btoa } from 'buffer'; // Assuming Node.js environment
+import { btoa } from 'buffer'; 
 import process from 'process';
 import fetch from 'node-fetch';
 import dotenv  from 'dotenv';
 dotenv.config();
 
-
-// Error handling and validation for environment variables
-/**
- * Validates the existence of an environment variable and returns its value.
- *
- * @param {string} varName - The name of the environment variable to validate.
- * @returns {string} - The value of the environment variable.
- * @throws {Error} - If the environment variable is missing.
- */
 const validateEnvVar = (varName) => {
   if (!process.env[varName]) {
     throw new Error(`Missing environment variable: ${varName}`);
@@ -24,11 +15,6 @@ const PAYPAL_API = validateEnvVar('PAYPAL_API');
 const CLIENT_ID = validateEnvVar('CLIENT_ID');
 const CLIENT_SECRET = validateEnvVar('CLIENT_SECRET');
 
-/**
- * Retrieves the access token from PayPal API using client credentials.
- * @returns {Promise<string>} The access token.
- * @throws {Error} If there is an error fetching the access token.
- */
 const getAccessToken = async () => {
   const basicAuth = btoa(`${CLIENT_ID}:${CLIENT_SECRET}`);
 
@@ -54,13 +40,7 @@ const getAccessToken = async () => {
   }
 };
 
-/**
- * Creates a PayPal order for the specified total amount and cart items.
- * @param {number} totalAmount - The total amount of the order.
- * @param {Array} cart - The cart items.
- * @returns {Promise<string>} - The PayPal approval link for the created order.
- * @throws {Error} - If there is an error creating the order.
- */
+
 const createOrder = async (totalAmount) => {
     const accessToken = await getAccessToken();
 
