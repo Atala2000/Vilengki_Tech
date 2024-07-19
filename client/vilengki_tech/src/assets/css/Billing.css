@@ -79,3 +79,16 @@
     background-color: #0056b3;
   }
   
+
+  .form__message {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
+  .form__message.success {
+    color: green;
+  }
+  
+  .form__message.error {
+    color: red;
+  }
