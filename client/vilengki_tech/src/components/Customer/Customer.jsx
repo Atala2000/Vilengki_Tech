@@ -3,13 +3,15 @@ import Dashboard from './Dashboard';
 import Billing from './Billing';
 import PaymentHistory from './PaymentHistory';
 import '../../assets/css/Customer.css';
+import Avatar from '../../user.png'
+
 
 const Customer = () => {
   return (
     <>
       <nav>
         <span className="profile__photo">
-          {/* <img src="" alt="profile-photo" /> */}
+          <img src={Avatar} alt="User Avatar" />
         </span>
         <Link to='/customer' className='nav__link'>Dashboard</Link>
         <Link to='/customer/billing' className='nav__link'>Billing</Link>
