@@ -4,9 +4,9 @@
 This project is a prepaid billing management software designed for smart meters. It allows users to manage their prepaid electricity consumption, view billing information, and recharge their accounts conveniently.
 
 ## Team Members
-- Eric Getange
-- Eric Ngigi
-- Kidiavayi Atala
+- Eric Getange (email:ondiekidaystar@gmail.com) (phone: 0798989214)
+- Eric Ngigi (email:ericmosesngigi@gmail.com) (phone: 0725686201)
+- Kidiavayi Atala (email:atalakidi@gmail.com) (phone: 0769235063)
 
 ## Technologies Used
 - Frontend: React
